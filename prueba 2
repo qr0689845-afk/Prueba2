@@ -1,0 +1,75 @@
+Inventario = []
+Items = []
+
+
+'''
+hola kelwin
+'''
+
+'''pepe'''
+class lista:
+
+    def Agregaritem(self,nombre,tipo,cantidad):
+        Items=[nombre,tipo,cantidad]
+        Inventario.append(Items)
+
+    def Busqueda(self,nombre):
+        i=0
+        for j in Inventario:
+            if(Inventario[i][0]==nombre):
+                print(Inventario[i])
+            i+=1
+
+    def Eliminar(self,nombre):
+        i = 0
+        for j in Inventario:
+            if (Inventario[i][0] == nombre):
+                del(Inventario[i])
+            i += 1
+
+    def Mostrar(self):
+        print(Inventario)
+
+    def ActualizarITEM(self,nombre,nuevonomb,nuevotipo,nuevocant):
+        i = 0
+        for j in Inventario:
+            if (Inventario[i][0] == nombre):
+                Inventario[i]=[nuevonomb,nuevotipo,nuevocant]
+            i += 1
+
+print("Bienvenido al menu de items The Legend of Zelda")
+
+lista1 = lista()
+opc = 0
+while opc != 6:
+    print("Que accion desea realizar?")
+    print("1)ADD item")
+    print("2)SEARCH item")
+    print("3)DELETE item")
+    print("4)DISPLAY items")
+    print("5)UPDATE item")
+    print("6)EXIT")
+    opc = int(input("Ingrese su opcion: "))
+
+    if opc == 1:
+        nombre=input("Ingrese el nombre del item: ")
+        tipo = input("Ingrese el tipo del item: ")
+        cantidad = input("Ingrese la cantidad del item: ")
+        lista1.Agregaritem(nombre,tipo,cantidad)
+        print("Item correctamente guardado")
+    elif opc == 2:
+        nombre = input("Ingrese el nombre del item: ")
+        lista1.Busqueda(nombre)
+    elif opc == 3:
+        nombre = input("Ingrese el nombre del item: ")
+        lista1.Eliminar(nombre)
+    elif opc == 4:
+        lista1.Mostrar()
+    elif opc == 5:
+        nombre = input("Ingrese el nombre del item a actualizar: ")
+        newnombre = input("Ingrese el nuevo nombre del item: ")
+        newtipo = input("Ingrese el nuevo tipo del item: ")
+        newcant = input("Ingrese la cantidad: ")
+        lista1.ActualizarITEM(nombre,newnombre,newtipo,newcant)
+
+        
